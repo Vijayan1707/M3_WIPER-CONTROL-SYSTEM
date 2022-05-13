@@ -1,19 +1,13 @@
-# STEPPER-MOTOR-CONTROL
+# WIPER-CONTROL-SYSTEM
 
-## ABSTRACT
+## Abstract
 
- * Stepper motor is a brushless DC motor that divides the full rotation angle of 360° into a number of equal steps.
- * The motor is rotated by applying a certain sequence of control signals. The speed of rotation can be changed by changing the rate at which the control signals are applied.
- * Various stepper motors with different step angles and torque ratings are available in the market.
- * A microcontroller can be used to apply different control signals to the motor to make it rotate according to the need of the application.
+  Wiper is an essential component that used to wipe raindrops or any water from the vehicle’s windscreen.The wipers are now available in the front and back window  shields the of cars and many other automobiles.A wiper is made up of a metal arm with one end pivoting and the other end having a long rubber blade attached.The blade is swung back and forth across the glass, removing any water, any precipitation, or other obstructions to view.Nowadays the wiper speed is changeable and also we can give some delay for swung the blade so that it will automatically swung after a period of time.In this project i explain about the wiper control system by using the led,stm32 and arm based microcontroller.
 
 ### COMPONENTS
  
- * ATMEGA328
- * ULN2803 DRIVER
- * STEPPER MOTOR
- * SIMULIDE
- * CODEBLOCKS
+ * STM32
+ * ARM based microcontroller
 
 ### FLOWCHART
 
@@ -22,11 +16,10 @@
 
 ### PROCEDURE
 
- * Here we are going to interface 6 wires Unipolar Stepper Motor with ATmega32 controller.
- * Only four wires are required to control the stepper motor. 
- * Two common wires of stepper motor connected to 5V supply.
- * ULN2803 driver is used to the driving stepper motor.
- * ATmega32 to rotate the stepper motor 360° clockwise by half step sequence and 360° anticlockwise by full step sequence.
+* For the ignition of key position the Red LED is ON, if the user button is pressed and held for 2 secs
+* On press of the user input, Blue, Green and Orange LEDs come ON one at a time with the set frequency, The frequency changes on every alternate key press, 3 frequency levels with 1, 4 and 8 Hz
+* The LED glow pattern stops on the 4th press; the wiper action starts next press onwards as mentioned in step 2
+* The Red LED is OFF, if the user button is pressed and held for 2 secs
 
 ### Testing and Coding
 
@@ -38,10 +31,10 @@
 
 ### CONCLUSION
 
- * Stepper Motor is controlled by using Atmega328 microcontroller.
+ * Wiper system is controlled by using STM32 and ARM based microcontroller.
  
 ### REFERENCE
 
- * Referred Stepper motor control with Atmega328 MCU.
- * Surefed in internet regarding AVR CODING.
+ * Referred push button to control the LED's of STM32.
+ * Surefed in internet regarding CODING.
 
