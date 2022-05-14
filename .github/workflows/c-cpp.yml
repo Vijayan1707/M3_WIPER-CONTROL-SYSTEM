@@ -1,4 +1,4 @@
-name: main_check
+name: cpp
 
 on:
   push:
