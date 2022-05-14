@@ -2,7 +2,7 @@
 
 ## Features
 
- * Controlling of wiber control system using STM32 and Arm based microcontroller.
+ * Controlling of wiper control system using STM32 and Arm based microcontroller.
 
 ## Research
 
