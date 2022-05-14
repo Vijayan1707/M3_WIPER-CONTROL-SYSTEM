@@ -27,7 +27,7 @@ void delay(int a)
 {
 	for (uint32_t i=0;i<a;i++);
 }
-int count=1;
+int count=1,v=0;
 int main(void)
 {
 	    GPIO_Handle_t Led,INP;
@@ -67,16 +67,24 @@ int main(void)
 		INP.GPIO_PinConfig.GPIO_PinMode=GPIO_MODE_IN;
 		GPIO_Init(&INP);
 
-		while(1)
-		{
+		while(1){
+//		if(count!=1 && count<7){
+//			GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_14);
+//		}
 			if(GPIO_ReadFromInputPin(GPIOA,GPIO_PIN_NO_0)==ENABLE){
 				if(count==1){
-					GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_14);
 					if(GPIO_ReadFromInputPin(GPIOA,GPIO_PIN_NO_0)==ENABLE){
-			        count++;}
+						delay(100000);
+						delay(100000);
+						delay(100000);
+						delay(100000);
+						GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_14);
+						delay(1000000);
+						//if(GPIO_ReadFromInputPin(GPIOA,GPIO_PIN_NO_0))
+						 count++;}
 			        }
-               if(count==2){
-					while(count==2){
+				else if(count==2){
+				  while(count==2){
 			   GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_15);
 			       delay(30000000);
 			     GPIO_WriteToOutputPin(GPIOD,GPIO_PIN_NO_15,0);
@@ -96,9 +104,9 @@ int main(void)
 			     count++;}
 				}
 			}
-			if(count==3){
+				else if(count==3){
 					while(count==3){
-					GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_15);
+						GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_15);
 					     delay(20000000);
 					  GPIO_WriteToOutputPin(GPIOD,GPIO_PIN_NO_15,0);
 					GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_12);
@@ -117,7 +125,7 @@ int main(void)
 					     count++;}
 				}
 			}
-				if(count==4){
+				else if(count==4){
 					while(count==4){
 					GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_15);
 					     delay(10000000);
@@ -131,19 +139,34 @@ int main(void)
 					GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_12);
 			             delay(10000000);
 			          GPIO_WriteToOutputPin(GPIOD,GPIO_PIN_NO_12,0);
-			        GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_15);
-			             delay(10000000);
-			          GPIO_WriteToOutputPin(GPIOD,GPIO_PIN_NO_15,0);
+
 			          if(GPIO_ReadFromInputPin(GPIOA,GPIO_PIN_NO_0)==ENABLE){
 					count++;}
 					}
 				}
-                if(count==5){
-                	if(GPIO_ReadFromInputPin(GPIOA,GPIO_PIN_NO_0)==ENABLE){
-                						count++;}
-                	delay(50000000);
-                	GPIO_WriteToOutputPin(GPIOD,GPIO_PIN_NO_14,0);
+				else if(count==5){
+					GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_13);
+					     delay(1000000);
+					  GPIO_WriteToOutputPin(GPIOD,GPIO_PIN_NO_13,0);
+            		GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_12);
+						 delay(1000000);
+					GPIO_WriteToOutputPin(GPIOD,GPIO_PIN_NO_12,0);
+					 GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_15);
+						delay(1000000);
+				    GPIO_WriteToOutputPin(GPIOD,GPIO_PIN_NO_15,0);
+				    delay(1000000);
+				    if(GPIO_ReadFromInputPin(GPIOA,GPIO_PIN_NO_0)==ENABLE){
+						count++;}
                 }
+				else if(count==6){
+					delay(50000000);
+					delay(10000000);
+					//GPIO_ReadFromInputPin(GPIOA,GPIO_PIN_NO_0,1)
+					GPIO_WriteToOutputPin(GPIOD,GPIO_PIN_NO_14,0);
+                	count++;
+                }
+				else
+				 break;
 		}
 	}
 
