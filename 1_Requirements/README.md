@@ -35,21 +35,24 @@
 
 ## STRENGTHS:
 
- * Easily Operating.
- * Platfrom Independant.
+ * Easily Operating the wiper control.
 
 ## WEAKNESS:
  
- * Controlling using WEB.
+ * Periodic maintenance of controller.
 
 ## HIGH LEVEL REQUIREMENTS:
 
  |  ID   | Description | Status (Implemented/In Future) |
 | ----- | ----------- | ------------------------------ |
-| HLR 1 |   ULN2803 driver   |  Implemented  |
+| HLR 1 | STM32F407VG | Implemented |
+| HLR 2 | STM32 DRIVER BOARD | Implemented |
+| HLR 3 | WIPER CONTROL USING LED | Implemented |
+| HLR 4 | SENSOR | Future |
+
 
 ## Low Level Requirements:
 
 |  ID   | Description | Status (Implemented/ In Future) |
 | ----- | ----------- | ------------------------------- |
-| LLR 1 |    Stepper Motor | Implemented |
+| LLR 1 | LED USED | Implemented |
