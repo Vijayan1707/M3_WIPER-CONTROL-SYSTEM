@@ -1,4 +1,4 @@
-name: Valgrind
+name: cpp c/c++
 
 on:
   
